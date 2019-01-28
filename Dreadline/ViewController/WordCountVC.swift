@@ -17,5 +17,9 @@ class WordCountVC: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
     }
-    
+
+    @IBAction func dismissWordCountWindow(_ sender: NSButton) {
+        let application = NSApplication.shared
+        application.stopModal()
+    }
 }

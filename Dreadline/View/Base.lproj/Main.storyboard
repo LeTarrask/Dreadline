@@ -746,7 +746,7 @@ DQ
 </string>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="dismissWordCountWindow:" target="Z8F-h8-u17" id="eBV-LH-rzO"/>
+                                    <action selector="dismissWordCountWindow:" target="Hgt-my-crM" id="ArE-Q4-wdh"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FnL-Za-mUj">

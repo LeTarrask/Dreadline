@@ -47,10 +47,5 @@ class ViewController: NSViewController {
             }
         }
     }
-
-    @IBAction func dismissWordCountWindow(_ sender: NSButton) {
-        let application = NSApplication.shared
-        application.stopModal()
-    }
 }
 
