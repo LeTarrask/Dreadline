@@ -12,6 +12,8 @@
 		7932929C21FF12D700589385 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932929B21FF12D700589385 /* Document.swift */; };
 		7932929E21FF12D900589385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7932929D21FF12D900589385 /* Assets.xcassets */; };
 		793292A121FF12D900589385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7932929F21FF12D900589385 /* Main.storyboard */; };
+		793292AA21FF1EEE00589385 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793292A921FF1EEE00589385 /* WindowController.swift */; };
+		793292B021FF22C600589385 /* WordCountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793292AF21FF22C600589385 /* WordCountVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		793292A021FF12D900589385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		793292A221FF12D900589385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		793292A321FF12D900589385 /* Dreadline.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dreadline.entitlements; sourceTree = "<group>"; };
+		793292A921FF1EEE00589385 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		793292AF21FF22C600589385 /* WordCountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,14 +60,48 @@
 			isa = PBXGroup;
 			children = (
 				7932929721FF12D700589385 /* AppDelegate.swift */,
-				7932929921FF12D700589385 /* ViewController.swift */,
-				7932929B21FF12D700589385 /* Document.swift */,
-				7932929D21FF12D900589385 /* Assets.xcassets */,
-				7932929F21FF12D900589385 /* Main.storyboard */,
 				793292A221FF12D900589385 /* Info.plist */,
 				793292A321FF12D900589385 /* Dreadline.entitlements */,
+				793292AC21FF1F1900589385 /* Model */,
+				793292AD21FF1F2300589385 /* View */,
+				793292AB21FF1EF600589385 /* ViewController */,
+				793292AE21FF1F3F00589385 /* Assets */,
 			);
 			path = Dreadline;
+			sourceTree = "<group>";
+		};
+		793292AB21FF1EF600589385 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7932929921FF12D700589385 /* ViewController.swift */,
+				793292A921FF1EEE00589385 /* WindowController.swift */,
+				793292AF21FF22C600589385 /* WordCountVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		793292AC21FF1F1900589385 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7932929B21FF12D700589385 /* Document.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		793292AD21FF1F2300589385 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7932929F21FF12D900589385 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		793292AE21FF1F3F00589385 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7932929D21FF12D900589385 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +175,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7932929A21FF12D700589385 /* ViewController.swift in Sources */,
+				793292AA21FF1EEE00589385 /* WindowController.swift in Sources */,
 				7932929821FF12D700589385 /* AppDelegate.swift in Sources */,
+				793292B021FF22C600589385 /* WordCountVC.swift in Sources */,
 				7932929C21FF12D700589385 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
