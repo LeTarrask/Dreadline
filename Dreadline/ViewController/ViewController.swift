@@ -12,15 +12,31 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var text: NSScrollView!
 
+    @IBOutlet weak var dreadline: NSTextField!
+
+    var seconds = 60
+    var timer = Timer()
+    var isTimerRunning = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        loadStartView()
+        if isTimerRunning == false {
+            runTimer()
+        }
     }
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+        }
+    }
+
+    func loadStartView() {
+        let controller = storyboard?.instantiateController(withIdentifier: "Start Window Controller") as! NSWindowController
+        if let window = controller.window {
+            let view = window.contentViewController as! StartVC
+            presentAsModalWindow(view)
         }
     }
 
@@ -46,6 +62,28 @@ class ViewController: NSViewController {
                 wordCountWindow.close()
             }
         }
+    }
+
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+    }
+
+    @objc func updateTimer() {
+        if seconds < 1 {
+            timer.invalidate()
+            // add send email functionality
+        } else {
+            seconds -= 1     //This will decrement(count down)the seconds.
+            dreadline.stringValue = "Dreadline: " + timeString(time: TimeInterval(seconds)) //This will update the label.
+        }
+    }
+
+    func timeString(time:TimeInterval) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
 }
 
