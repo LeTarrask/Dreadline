@@ -16,6 +16,7 @@
 		793292B021FF22C600589385 /* WordCountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793292AF21FF22C600589385 /* WordCountVC.swift */; };
 		7970653B21FF39970097B5DE /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7970653A21FF39970097B5DE /* StartVC.swift */; };
 		7970653D21FF51F90097B5DE /* Dreadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7970653C21FF51F90097B5DE /* Dreadline.swift */; };
+		7970653F22009F130097B5DE /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7970653E22009F130097B5DE /* Email.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		793292AF21FF22C600589385 /* WordCountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountVC.swift; sourceTree = "<group>"; };
 		7970653A21FF39970097B5DE /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		7970653C21FF51F90097B5DE /* Dreadline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dreadline.swift; sourceTree = "<group>"; };
+		7970653E22009F130097B5DE /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				7932929B21FF12D700589385 /* Document.swift */,
 				7970653C21FF51F90097B5DE /* Dreadline.swift */,
+				7970653E22009F130097B5DE /* Email.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				793292B021FF22C600589385 /* WordCountVC.swift in Sources */,
 				7932929C21FF12D700589385 /* Document.swift in Sources */,
 				7970653B21FF39970097B5DE /* StartVC.swift in Sources */,
+				7970653F22009F130097B5DE /* Email.swift in Sources */,
 				7970653D21FF51F90097B5DE /* Dreadline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,14 +14,14 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var dreadline: NSTextField!
 
-    var seconds = 60
+    var seconds = 5
     var timer = Timer()
     var isTimerRunning = false
-    var theWork: Dreadline = Dreadline(email: "", worktime: 0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //showStartWindow()
         if isTimerRunning == false {
             runTimer()
         }
@@ -56,6 +56,21 @@ class ViewController: NSViewController {
         }
     }
 
+    func showStartWindow() {
+        // 1
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        let startWindowController = storyboard.instantiateController(withIdentifier: "Start Window Controller") as! NSWindowController
+
+        if let startWindow = startWindowController.window {
+            let startController = startWindow.contentViewController as! StartVC
+            
+            // loads modal
+            let application = NSApplication.shared
+            application.runModal(for: startWindow)
+            startWindow.close()
+        }
+    }
+
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
         isTimerRunning = true
@@ -64,7 +79,8 @@ class ViewController: NSViewController {
     @objc func updateTimer() {
         if seconds < 1 {
             timer.invalidate()
-            // add send email functionality
+            //SendEmail.send(boss: "alex@garageminfinita.com", message: "teste teste")
+
         } else {
             seconds -= 1     //This will decrement(count down)the seconds.
             dreadline.stringValue = "Dreadline: " + timeString(time: TimeInterval(seconds)) //This will update the label.
@@ -78,4 +94,3 @@ class ViewController: NSViewController {
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
 }
-

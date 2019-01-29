@@ -18,25 +18,28 @@ class StartVC: NSViewController {
         super.viewDidLoad()
     }
 
-    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        let theWork = Dreadline(email: email.stringValue, worktime: Int(time.stringValue) ?? 00)
-        let windowController = segue.destinationController as! NSWindowController
+    @IBAction func startDocument(_ sender: Any) {
+        if email.stringValue.isValidEmail() && Int(time.stringValue) ?? 0 > 0 {
+            let theWork = Dreadline(email: email.stringValue, worktime: Int(time.stringValue)!)
+            
+            
+            //            let window = NSApplication.shared.windows[0]
+//            let viewcontroller = window.contentViewController as! ViewController
+//            viewcontroller.theWork = theWork
 
-        if let window = windowController.window {
-            let viewController = window.contentViewController as! ViewController
-            viewController.theWork = theWork
-            print(viewController.theWork)
+            let application = NSApplication.shared
+            application.stopModal()
         }
     }
 
-    override func shouldPerformSegue(withIdentifier identifier: NSStoryboardSegue.Identifier, sender: Any?) -> Bool {
-        if email.stringValue.isValidEmail() && Int(time.stringValue) ?? 0 > 0, identifier == "startSegue" {
-                return true
-        } else {
-            return false
-        }
-    }
+//    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "startSegue", (segue.destinationController as AnyObject).identifier == "Document View Controller" {
+//            print("sei")
+//        }
+//    }
 }
+
+
 
 
 extension String {
