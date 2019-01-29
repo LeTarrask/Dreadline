@@ -19,24 +19,23 @@ class StartVC: NSViewController {
     }
 
     @IBAction func startDocument(_ sender: Any) {
-        if email.stringValue.isValidEmail() && Int(time.stringValue) ?? 0 > 0 {
-            let theWork = Dreadline(email: email.stringValue, worktime: Int(time.stringValue)!)
-            
-            
-            //            let window = NSApplication.shared.windows[0]
-//            let viewcontroller = window.contentViewController as! ViewController
-//            viewcontroller.theWork = theWork
-
-            let application = NSApplication.shared
-            application.stopModal()
-        }
     }
 
-//    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "startSegue", (segue.destinationController as AnyObject).identifier == "Document View Controller" {
-//            print("sei")
-//        }
-//    }
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if segue.identifier == "startSegue", email.stringValue.isValidEmail() && Int(time.stringValue) ?? 0 > 0 {
+            if let view = segue.destinationController as? ViewController {
+                view.theWork = Dreadline(email: email.stringValue, worktime: Int(time.stringValue) ?? 00)
+            }
+            // should dismiss this window
+        } // should add messages to fix email and or time of work
+    }
+
+    override func shouldPerformSegue(withIdentifier identifier: NSStoryboardSegue.Identifier, sender: Any?) -> Bool {
+        if email.stringValue.isValidEmail() && Int(time.stringValue) ?? 0 > 0 {
+            return true
+        }
+        return false
+    }
 }
 
 
