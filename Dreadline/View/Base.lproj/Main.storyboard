@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="aeY-kc-7Cw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -746,7 +746,7 @@
                 </windowController>
                 <customObject id="rmA-lb-nD3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="238"/>
+            <point key="canvasLocation" x="-526" y="178"/>
         </scene>
         <!--New Dreadline-->
         <scene sceneID="PE0-8A-0fU">
@@ -783,6 +783,7 @@ DQ
                                 </buttonCell>
                                 <connections>
                                     <action selector="clickedStart:" target="3T2-gD-VkU" id="dZh-0L-Nlh"/>
+                                    <segue destination="jGA-0Y-lOj" kind="show" identifier="startSegue" id="Wuy-ej-y3j"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwQ-K9-OOd">
@@ -826,7 +827,7 @@ DQ
                 <customObject id="GZY-m2-xbz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController id="Bl0-MR-1Aw"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="656"/>
+            <point key="canvasLocation" x="-526" y="547"/>
         </scene>
         <!--Word CountVC-->
         <scene sceneID="iNF-qK-fWO">
@@ -905,33 +906,33 @@ DQ
             <objects>
                 <viewController id="5gI-5U-AMq" customClass="ViewController" customModule="Dreadline" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="ERx-hH-rdd">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="700"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1g-oJ-Wfn">
-                                <rect key="frame" x="15" y="15" width="450" height="225"/>
+                                <rect key="frame" x="15" y="15" width="610" height="655"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="XrM-9D-zLN">
-                                    <rect key="frame" x="0.0" y="0.0" width="435" height="225"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="595" height="655"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="PTf-11-els">
-                                            <rect key="frame" x="0.0" y="0.0" width="435" height="225"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="595" height="655"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <size key="minSize" width="435" height="225"/>
-                                            <size key="maxSize" width="465" height="10000000"/>
+                                            <size key="minSize" width="595" height="655"/>
+                                            <size key="maxSize" width="595" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
                                 </clipView>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="7wy-aB-pcs">
-                                    <rect key="frame" x="435" y="0.0" width="15" height="225"/>
+                                    <rect key="frame" x="595" y="0.0" width="15" height="655"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZsX-12-eSn">
-                                <rect key="frame" x="345" y="248" width="122" height="17"/>
+                                <rect key="frame" x="505" y="678" width="122" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Dreadline 00:00:00" id="gMo-A9-Ucy">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -956,7 +957,7 @@ DQ
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="1156"/>
+            <point key="canvasLocation" x="75" y="1292"/>
         </scene>
     </scenes>
 </document>

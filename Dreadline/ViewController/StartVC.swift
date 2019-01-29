@@ -16,12 +16,24 @@ class StartVC: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
     }
 
-    @IBAction func clickedStart(_ sender: Any) {
-        if email.stringValue.isValidEmail() && Int(time.stringValue) ?? 0 > 0 {
-            print("should create dreadline")
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        let theWork = Dreadline(email: email.stringValue, worktime: Int(time.stringValue) ?? 00)
+        let windowController = segue.destinationController as! NSWindowController
+
+        if let window = windowController.window {
+            let viewController = window.contentViewController as! ViewController
+            viewController.theWork = theWork
+            print(viewController.theWork)
+        }
+    }
+
+    override func shouldPerformSegue(withIdentifier identifier: NSStoryboardSegue.Identifier, sender: Any?) -> Bool {
+        if email.stringValue.isValidEmail() && Int(time.stringValue) ?? 0 > 0, identifier == "startSegue" {
+                return true
+        } else {
+            return false
         }
     }
 }

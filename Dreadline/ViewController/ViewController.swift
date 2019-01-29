@@ -17,11 +17,11 @@ class ViewController: NSViewController {
     var seconds = 60
     var timer = Timer()
     var isTimerRunning = false
+    var theWork: Dreadline = Dreadline(email: "", worktime: 0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadStartView()
         if isTimerRunning == false {
             runTimer()
         }
@@ -29,14 +29,6 @@ class ViewController: NSViewController {
 
     override var representedObject: Any? {
         didSet {
-        }
-    }
-
-    func loadStartView() {
-        let controller = storyboard?.instantiateController(withIdentifier: "Start Window Controller") as! NSWindowController
-        if let window = controller.window {
-            let view = window.contentViewController as! StartVC
-            presentAsModalWindow(view)
         }
     }
 
