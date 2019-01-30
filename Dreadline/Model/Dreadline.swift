@@ -9,46 +9,31 @@
 import Foundation
 
 struct Dreadline {
-    let workTime: Int?
+    let workTime: Double?
     let bossEmail: String?
     let startTime: Date?
     let endTime: Date?
 
-    init(email: String, worktime: Int) {
+    init(email: String, worktime: Double) {//we make sure there's always a worktime
         self.bossEmail = email
         self.workTime = worktime
         self.startTime = Date()
-        self.endTime = startTime?.addingTimeInterval(TimeInterval(Double(workTime ?? 00) * 60.0))
+        self.endTime = startTime?.addingTimeInterval(TimeInterval(workTime!.hours))
     }
 }
 
-extension Int {
+extension Double {
+    var seconds: Double { return self }
 
-    var seconds: Int {
-        return self
-    }
+    var minutes: Double { return self.seconds * 60 }
 
-    var minutes: Int {
-        return self.seconds * 60
-    }
+    var hours: Double { return self.minutes * 60 }
 
-    var hours: Int {
-        return self.minutes * 60
-    }
+    var days: Double { return self.hours * 24 }
 
-    var days: Int {
-        return self.hours * 24
-    }
+    var weeks: Double { return self.days * 7 }
 
-    var weeks: Int {
-        return self.days * 7
-    }
+    var months: Double { return self.weeks * 4 }
 
-    var months: Int {
-        return self.weeks * 4
-    }
-
-    var years: Int {
-        return self.months * 12
-    }
+    var years: Double { return self.months * 12 }
 }

@@ -786,8 +786,8 @@ DQ
                                     <segue destination="5gI-5U-AMq" kind="modal" identifier="startSegue" id="jhC-lQ-Jnb"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwQ-K9-OOd">
-                                <rect key="frame" x="108" y="52" width="172" height="22"/>
+                            <textField verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwQ-K9-OOd">
+                                <rect key="frame" x="108" y="52" width="24" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="rMy-xV-t0U">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="hbD-Kw-f7O"/>
                                     <font key="font" metaFont="system"/>
@@ -800,6 +800,54 @@ DQ
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="fWN-iR-NHh">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sfr-et-EDi">
+                                <rect key="frame" x="153" y="49" width="56" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="2" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="JGw-Pg-3Ds" id="cZf-9F-pWD">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="MUU-5L-HoB">
+                                        <items>
+                                            <menuItem title="0" id="2yS-gC-Cbq"/>
+                                            <menuItem title="1" id="x2S-0N-FSO"/>
+                                            <menuItem title="2" state="on" id="JGw-Pg-3Ds"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Qu-oW-6vK">
+                                <rect key="frame" x="230" y="49" width="53" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="0" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="vhv-ty-OHT" id="40n-J8-nZx">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="YQs-oA-cLM">
+                                        <items>
+                                            <menuItem title="0" state="on" id="vhv-ty-OHT"/>
+                                            <menuItem title="Item 2" id="bAN-8a-Xfd"/>
+                                            <menuItem title="Item 3" id="GYz-MF-PZa"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPz-OL-OKa">
+                                <rect key="frame" x="214" y="54" width="16" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="m" id="ce0-0U-GoF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nhc-kq-0Sz">
+                                <rect key="frame" x="138" y="54" width="22" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="h" id="aef-D3-KGy">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -821,6 +869,8 @@ DQ
                     </view>
                     <connections>
                         <outlet property="email" destination="Sav-8Q-eVP" id="gyP-pS-gFC"/>
+                        <outlet property="hours" destination="sfr-et-EDi" id="moJ-Fx-MXB"/>
+                        <outlet property="mins" destination="7Qu-oW-6vK" id="3aO-Z0-d94"/>
                         <outlet property="time" destination="wwQ-K9-OOd" id="lcS-i4-Ra6"/>
                     </connections>
                 </viewController>
@@ -904,7 +954,7 @@ DQ
         <!--Untitled-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController title="Untitled" storyboardIdentifier="Document View Controller" showSeguePresentationStyle="single" id="5gI-5U-AMq" customClass="ViewController" customModule="Dreadline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Untitled" storyboardIdentifier="Document View Controller" showSeguePresentationStyle="single" id="5gI-5U-AMq" customClass="TextViewController" customModule="Dreadline" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="ERx-hH-rdd">
                         <rect key="frame" x="0.0" y="0.0" width="640" height="700"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -961,6 +1011,6 @@ DQ
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nsd-lR-9xd"/>
+        <segue reference="jhC-lQ-Jnb"/>
     </inferredMetricsTieBreakers>
 </document>

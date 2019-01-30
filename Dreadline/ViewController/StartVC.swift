@@ -13,7 +13,9 @@ class StartVC: NSViewController {
     @IBOutlet weak var email: NSTextField!
     @IBOutlet weak var time: NSTextField!
 
-
+    @IBOutlet weak var hours: NSPopUpButton!
+    @IBOutlet weak var mins: NSPopUpButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,9 +24,10 @@ class StartVC: NSViewController {
     }
 
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        if segue.identifier == "startSegue", email.stringValue.isValidEmail() && Int(time.stringValue) ?? 0 > 0 {
-            if let view = segue.destinationController as? ViewController {
-                view.theWork = Dreadline(email: email.stringValue, worktime: Int(time.stringValue) ?? 00)
+        if segue.identifier == "startSegue", email.stringValue.isValidEmail() && hours.intValue > 0 {
+            if let view = segue.destinationController as? TextViewController {
+                view.theWork = Dreadline(email: email.stringValue, worktime: Double(time.stringValue) ?? 00)
+                
             }
             // should dismiss this window
         } // should add messages to fix email and or time of work

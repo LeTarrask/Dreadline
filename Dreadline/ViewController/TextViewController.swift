@@ -8,30 +8,43 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class TextViewController: NSViewController {
 
     @IBOutlet weak var text: NSScrollView!
 
     @IBOutlet weak var dreadline: NSTextField!
 
-    var seconds: Int = 0
-    var timer = Timer()
-    var isTimerRunning = false
-
     var theWork = Dreadline(email: "", worktime: 0)
+    var message = ""
+
+    var seconds = 6
+    var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        seconds = Int(theWork.endTime?.timeIntervalSinceNow ?? 00)
-
-        if isTimerRunning == false {
-            runTimer()
+        // print(theWork)
+        if theWork.workTime! > 0.0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + theWork.workTime!) {
+                // call email
+                //SendEmail.send(boss: self.theWork.bossEmail ?? "", message: self.message)
+            }
+            // start timer is not working
+            self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                print(self.seconds)
+                self.updateTimer(timer)
+            }
         }
     }
 
-    override var representedObject: Any? {
-        didSet {
+    func updateTimer(_ timer : Timer) {
+        if seconds < 1 {
+            timer.invalidate()
+        } else if seconds < 10 {
+            self.message = getMessage() //updates the message var to the text in view
+        } else {
+            seconds -= 1     //This will decrement(count down)the seconds.
+            dreadline.stringValue = "Dreadline: " + timeString(time: TimeInterval(seconds)) //This will update the label.
         }
     }
 
@@ -59,22 +72,10 @@ class ViewController: NSViewController {
         }
     }
 
-    func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
-        isTimerRunning = true
-    }
-
-    @objc func updateTimer() {
-        if seconds < 1 {
-            timer.invalidate()
-            //SendEmail.send(boss: "alex@garageminfinita.com", message: "teste teste")
-            print("invalidated")
-
-        } else {
-            print("porque nãovai?")
-            seconds -= 1     //This will decrement(count down)the seconds.
-            dreadline.stringValue = "Dreadline: " + timeString(time: TimeInterval(seconds)) //This will update the label.
-        }
+    // THIS IS UNTESTED
+    func getMessage() -> String{
+        let myTextView = text.documentView! as! NSTextView
+        return myTextView.string
     }
 
     func timeString(time:TimeInterval) -> String {
