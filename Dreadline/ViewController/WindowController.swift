@@ -12,13 +12,27 @@ class WindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-    
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+
+//        loadBG()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         shouldCascadeWindows = true
     }
+
+//    func loadBG() {
+//        let window = NSWindow()
+//        if let screen = NSScreen.main {
+//            window.setFrame(screen.visibleFrame, display: true, animate: true)
+//        }
+//
+//        let visualEffect = NSVisualEffectView()
+//        visualEffect.blendingMode = .behindWindow
+//        visualEffect.state = .active
+//        visualEffect.material = .dark
+//        visualEffect.layer?.cornerRadius = 16.0
+//        window.contentView = visualEffect
+//    }
 
 }

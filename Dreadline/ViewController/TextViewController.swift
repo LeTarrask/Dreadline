@@ -17,8 +17,8 @@ class TextViewController: NSViewController {
     var theWork = Dreadline(email: "", worktime: 0)
     var message = ""
 
-    var seconds = 6
-    var timer: Timer?
+    var seconds = 60
+    var timer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,18 +26,23 @@ class TextViewController: NSViewController {
         // print(theWork)
         if theWork.workTime! > 0.0 {
             DispatchQueue.main.asyncAfter(deadline: .now() + theWork.workTime!) {
-                // call email
+                // call email - uncomment to make it work
                 //SendEmail.send(boss: self.theWork.bossEmail ?? "", message: self.message)
             }
             // start timer is not working
-            self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-                print(self.seconds)
-                self.updateTimer(timer)
-            }
+            print("chamou o timer")
+            runTimer()
         }
     }
 
-    func updateTimer(_ timer : Timer) {
+    //MARK: Timer funcionality that doesn't seem to work
+    func runTimer() {
+        print("timer apareceu")
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+    }
+
+    @objc func updateTimer(_ timer: Timer) {
+        print(seconds)
         if seconds < 1 {
             timer.invalidate()
         } else if seconds < 10 {
@@ -48,12 +53,13 @@ class TextViewController: NSViewController {
         }
     }
 
-    // THIS IS UNTESTED
+    // MARK: Message Content Update ---- THIS IS UNTESTED
     func getMessage() -> String{
         let myTextView = text.documentView! as! NSTextView
         return myTextView.string
     }
 
+    // MARK: String Formatter for Dreadline Label
     func timeString(time:TimeInterval) -> String {
         let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
@@ -61,12 +67,7 @@ class TextViewController: NSViewController {
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
 
-    override var representedObject: Any? {
-        didSet {
-            // Update the view, if already loaded.
-        }
-    }
-
+    // MARK: Word Count Window Function
     @IBAction func showWordCountWindow(_ sender: AnyObject) {
         // 1
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
