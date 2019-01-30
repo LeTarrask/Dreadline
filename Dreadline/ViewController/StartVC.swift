@@ -20,6 +20,12 @@ class StartVC: NSViewController {
         super.viewDidLoad()
     }
 
+    override var representedObject: Any? {
+        didSet {
+            // Update the view, if already loaded.
+        }
+    }
+
     @IBAction func startDocument(_ sender: Any) {
     }
 
@@ -30,6 +36,7 @@ class StartVC: NSViewController {
                 
             }
             // should dismiss this window
+            self.view.window?.close()
         } // should add messages to fix email and or time of work
     }
 
@@ -40,9 +47,6 @@ class StartVC: NSViewController {
         return false
     }
 }
-
-
-
 
 extension String {
     func isValidEmail() -> Bool {

@@ -48,6 +48,25 @@ class TextViewController: NSViewController {
         }
     }
 
+    // THIS IS UNTESTED
+    func getMessage() -> String{
+        let myTextView = text.documentView! as! NSTextView
+        return myTextView.string
+    }
+
+    func timeString(time:TimeInterval) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
+
+    override var representedObject: Any? {
+        didSet {
+            // Update the view, if already loaded.
+        }
+    }
+
     @IBAction func showWordCountWindow(_ sender: AnyObject) {
         // 1
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -70,18 +89,5 @@ class TextViewController: NSViewController {
                 wordCountWindow.close()
             }
         }
-    }
-
-    // THIS IS UNTESTED
-    func getMessage() -> String{
-        let myTextView = text.documentView! as! NSTextView
-        return myTextView.string
-    }
-
-    func timeString(time:TimeInterval) -> String {
-        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
 }
