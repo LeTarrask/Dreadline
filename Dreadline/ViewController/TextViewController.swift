@@ -38,7 +38,7 @@ class TextViewController: NSViewController {
     //MARK: Timer funcionality that doesn't seem to work
     func runTimer() {
         print("timer apareceu")
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
         print("deveria ter rodado")
     }
 
