@@ -11,53 +11,51 @@ import Cocoa
 class TextViewController: NSViewController {
 
     @IBOutlet weak var text: NSScrollView!
-
     @IBOutlet weak var dreadline: NSTextField!
 
-    var theWork = Dreadline(email: "", worktime: 0)
     var message = ""
+    var seconds = 15.0
+    var timer: Timer?
+    var bossEmail: String?
 
-    var seconds = 60
-    var timer = Timer()
+    @IBOutlet weak var popUp: NSView!
+
+    @IBOutlet weak var emailField: NSTextField!
+
+    @IBOutlet weak var timeField: NSDatePicker!
+
+    @IBAction func startDreadline(_ sender: Any) {
+        if emailField.stringValue.isValidEmail() {
+            bossEmail = emailField.stringValue
+            seconds = timeField.dateValue.timeIntervalSinceNow
+
+            createTimer()
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                // call emailsender
+                self.sendEmail()
+            }
+
+            popUp.isHidden = true
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // print(theWork)
-        if theWork.workTime! > 0.0 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + theWork.workTime!) {
-                // call email - uncomment to make it work
-                //SendEmail.send(boss: self.theWork.bossEmail ?? "", message: self.message)
-            }
-            // start timer is not working
-            print("chamou o timer")
-            runTimer()
-        }
+        let now = Date()
+        timeField.minDate = now.addingTimeInterval(60)
     }
 
-    //MARK: Timer funcionality that doesn't seem to work
-    func runTimer() {
-        print("timer apareceu")
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
-        print("deveria ter rodado")
+    // MARK: Message Content Update
+    func sendEmail() {
+        _ = SendEmail.send(boss: self.bossEmail ?? "", message: self.message)
     }
 
-    @objc func updateTimer(_ timer: Timer) {
-        print(seconds)
-        if seconds < 1 {
-            timer.invalidate()
-        } else if seconds < 10 {
-            self.message = getMessage() //updates the message var to the text in view
-        } else {
-            seconds -= 1     //This will decrement(count down)the seconds.
-            dreadline.stringValue = "Dreadline: " + timeString(time: TimeInterval(seconds)) //This will update the label.
-        }
-    }
-
-    // MARK: Message Content Update ---- THIS IS UNTESTED
-    func getMessage() -> String{
-        let myTextView = text.documentView! as! NSTextView
-        return myTextView.string
+    func getMessage() {
+        let textView: NSTextView = text.documentView! as! NSTextView
+        message = textView.string
+        print(message)
     }
 
     // MARK: String Formatter for Dreadline Label
@@ -92,4 +90,57 @@ class TextViewController: NSViewController {
             }
         }
     }
+}
+
+extension TextViewController {
+    func createTimer() {
+        // 1
+        if timer == nil {
+            // 2
+            timer = Timer.scheduledTimer(timeInterval: 1.0,
+                                         target: self,
+                                         selector: #selector(updateLabel),
+                                         userInfo: nil,
+                                         repeats: true)
+        }
+    }
+
+    @objc func updateLabel() {
+        dreadline.stringValue = "Dreadline: " + timeString(time: seconds)
+        seconds -= 1
+
+        if seconds < 1  {
+            timer?.invalidate()
+            dreadline.stringValue = "Dreadline is over"
+            text.isHidden = true
+        } else if seconds < 10 {
+            getMessage()
+            dreadline.textColor = .red
+        }
+    }
+}
+
+
+extension String {
+    func isValidEmail() -> Bool {
+        // here, `try!` will always succeed because the pattern is valid
+        let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
+        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+    }
+}
+
+extension Double {
+    var seconds: Double { return self }
+
+    var minutes: Double { return self.seconds * 60 }
+
+    var hours: Double { return self.minutes * 60 }
+
+    var days: Double { return self.hours * 24 }
+
+    var weeks: Double { return self.days * 7 }
+
+    var months: Double { return self.weeks * 4 }
+
+    var years: Double { return self.months * 12 }
 }
