@@ -11,7 +11,7 @@ import Cocoa
 class TextViewController: NSViewController {
 
     @IBOutlet weak var text: NSScrollView!
-    @IBOutlet weak var dreadline: NSTextField!
+    @IBOutlet weak var dreadlineLabel: NSTextField!
 
     var message = ""
     var seconds = 15.0
@@ -27,12 +27,11 @@ class TextViewController: NSViewController {
     @IBAction func startDreadline(_ sender: Any) {
         if emailField.stringValue.isValidEmail() {
             bossEmail = emailField.stringValue
-            seconds = timeField.dateValue.timeIntervalSinceNow
 
-            createTimer()
+            seconds = timeField.dateValue.timeIntervalSinceNow
+            createTimer(deadline: seconds)
 
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                // call emailsender
                 self.sendEmail()
             }
 
@@ -55,7 +54,6 @@ class TextViewController: NSViewController {
     func getMessage() {
         let textView: NSTextView = text.documentView! as! NSTextView
         message = textView.string
-        print(message)
     }
 
     // MARK: String Formatter for Dreadline Label
@@ -93,29 +91,26 @@ class TextViewController: NSViewController {
 }
 
 extension TextViewController {
-    func createTimer() {
+    func createTimer(deadline: Double) {
         // 1
-        if timer == nil {
-            // 2
-            timer = Timer.scheduledTimer(timeInterval: 1.0,
-                                         target: self,
-                                         selector: #selector(updateLabel),
-                                         userInfo: nil,
-                                         repeats: true)
-        }
+        timer = Timer.scheduledTimer(timeInterval: 1.0,
+        target: self,
+        selector: #selector(updateLabel),
+        userInfo: nil,
+        repeats: true)
     }
 
     @objc func updateLabel() {
-        dreadline.stringValue = "Dreadline: " + timeString(time: seconds)
+        dreadlineLabel.stringValue = "Dreadline: " + timeString(time: seconds)
         seconds -= 1
 
         if seconds < 1  {
             timer?.invalidate()
-            dreadline.stringValue = "Dreadline is over"
+            dreadlineLabel.stringValue = "Dreadline is over"
             text.isHidden = true
         } else if seconds < 10 {
             getMessage()
-            dreadline.textColor = .red
+            dreadlineLabel.textColor = .red
         }
     }
 }

@@ -13,7 +13,7 @@ class WindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
 
-//        loadBG()
+        loadBG()
     }
 
     required init?(coder: NSCoder) {
@@ -21,18 +21,18 @@ class WindowController: NSWindowController {
         shouldCascadeWindows = true
     }
 
-//    func loadBG() {
-//        let window = NSWindow()
-//        if let screen = NSScreen.main {
-//            window.setFrame(screen.visibleFrame, display: true, animate: true)
-//        }
-//
-//        let visualEffect = NSVisualEffectView()
-//        visualEffect.blendingMode = .behindWindow
-//        visualEffect.state = .active
-//        visualEffect.material = .dark
-//        visualEffect.layer?.cornerRadius = 16.0
-//        window.contentView = visualEffect
-//    }
+    func loadBG() {
+        let window = NSWindow()
+        if let screen = NSScreen.main {
+            window.setFrame(screen.visibleFrame, display: true, animate: true)
+        }
+
+        let visualEffect = NSVisualEffectView()
+        visualEffect.blendingMode = .behindWindow
+        visualEffect.state = .active
+        visualEffect.material = .dark
+        visualEffect.layer?.cornerRadius = 16.0
+        window.contentView = visualEffect
+    }
 
 }

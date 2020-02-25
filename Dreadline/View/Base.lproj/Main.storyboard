@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14810.12" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5gI-5U-AMq">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5gI-5U-AMq">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14810.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -741,7 +740,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GZr-xv-6Kg">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="message"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -763,7 +762,7 @@ DQ
                                 <rect key="frame" x="44" y="58" width="107" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Paragraph Count" id="vGl-9E-Z7B">
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="message"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -772,7 +771,7 @@ DQ
                                 <rect key="frame" x="171" y="97" width="51" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="123456" id="n5f-VU-2hm">
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="message"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -784,7 +783,7 @@ DQ
                                 <rect key="frame" x="173" y="58" width="51" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="123456" id="Yee-78-9hZ">
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="message"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -812,7 +811,7 @@ DQ
                                 <rect key="frame" x="15" y="15" width="610" height="656"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="XrM-9D-zLN">
                                     <rect key="frame" x="0.0" y="0.0" width="595" height="656"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="PTf-11-els">
                                             <rect key="frame" x="0.0" y="0.0" width="595" height="656"/>
@@ -837,7 +836,7 @@ DQ
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="URT-jW-kli">
                                 <rect key="frame" x="585" y="679" width="37" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Label" id="oCP-Ie-g80">
-                                    <font key="font" metaFont="menu"/>
+                                    <font key="font" metaFont="message"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -859,7 +858,7 @@ DQ
                                         <rect key="frame" x="18" y="164" width="296" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Please insert the email that will receive your text" id="Gum-nI-QwL">
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="message"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -868,7 +867,7 @@ DQ
                                         <rect key="frame" x="18" y="99" width="240" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="When do you have to deliver your text?" id="z1h-cd-Jvm">
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="message"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -877,7 +876,7 @@ DQ
                                         <rect key="frame" x="294" y="95" width="90" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <datePickerCell key="cell" borderStyle="bezel" alignment="left" datePickerMode="range" id="cfD-hO-y43">
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="message"/>
                                             <date key="date" timeIntervalSinceReferenceDate="-595983600">
                                                 <!--1982-02-12 01:00:00 +0000-->
                                             </date>
@@ -891,7 +890,7 @@ DQ
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="Start Dreadline" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s0h-Qv-Bpo">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="message"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="startDreadline:" target="5gI-5U-AMq" id="J3j-Mf-r4P"/>
@@ -913,7 +912,7 @@ DQ
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dreadline" destination="URT-jW-kli" id="mzh-Js-eCt"/>
+                        <outlet property="dreadlineLabel" destination="URT-jW-kli" id="mzh-Js-eCt"/>
                         <outlet property="emailField" destination="lGx-Vo-e43" id="E8P-jK-LQD"/>
                         <outlet property="popUp" destination="VV0-1D-sKj" id="fBl-hp-gyC"/>
                         <outlet property="text" destination="h1g-oJ-Wfn" id="rTV-ZQ-Rhk"/>
