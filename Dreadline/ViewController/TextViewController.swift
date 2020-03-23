@@ -94,10 +94,10 @@ extension TextViewController {
     func createTimer(deadline: Double) {
         // 1
         timer = Timer.scheduledTimer(timeInterval: 1.0,
-        target: self,
-        selector: #selector(updateLabel),
-        userInfo: nil,
-        repeats: true)
+                                     target: self,
+                                     selector: #selector(updateLabel),
+                                     userInfo: nil,
+                                     repeats: true)
     }
 
     @objc func updateLabel() {
