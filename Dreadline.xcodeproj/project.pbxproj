@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7912069026208C77008FF6CF /* String+isValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7912068F26208C77008FF6CF /* String+isValidEmail.swift */; };
+		7912069326208C8F008FF6CF /* Double+TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7912069226208C8F008FF6CF /* Double+TimeConverter.swift */; };
 		7932929821FF12D700589385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932929721FF12D700589385 /* AppDelegate.swift */; };
 		7932929A21FF12D700589385 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932929921FF12D700589385 /* TextViewController.swift */; };
 		7932929C21FF12D700589385 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932929B21FF12D700589385 /* Document.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7912068F26208C77008FF6CF /* String+isValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isValidEmail.swift"; sourceTree = "<group>"; };
+		7912069226208C8F008FF6CF /* Double+TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+TimeConverter.swift"; sourceTree = "<group>"; };
 		7932929421FF12D700589385 /* Dreadline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreadline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7932929721FF12D700589385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7932929921FF12D700589385 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7912068E26208C61008FF6CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7912069226208C8F008FF6CF /* Double+TimeConverter.swift */,
+				7912068F26208C77008FF6CF /* String+isValidEmail.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7932928B21FF12D700589385 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +80,7 @@
 				793292AC21FF1F1900589385 /* Model */,
 				793292AD21FF1F2300589385 /* View */,
 				793292AB21FF1EF600589385 /* ViewController */,
+				7912068E26208C61008FF6CF /* Extensions */,
 				793292AE21FF1F3F00589385 /* Assets */,
 			);
 			path = Dreadline;
@@ -117,6 +131,7 @@
 				7932929021FF12D700589385 /* Sources */,
 				7932929121FF12D700589385 /* Frameworks */,
 				7932929221FF12D700589385 /* Resources */,
+				7912068C26208B11008FF6CF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -134,11 +149,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Garagem Infinita";
 				TargetAttributes = {
 					7932929321FF12D700589385 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -172,6 +188,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7912068C26208B11008FF6CF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7932929021FF12D700589385 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -179,8 +215,10 @@
 			files = (
 				7932929A21FF12D700589385 /* TextViewController.swift in Sources */,
 				793292AA21FF1EEE00589385 /* WindowController.swift in Sources */,
+				7912069326208C8F008FF6CF /* Double+TimeConverter.swift in Sources */,
 				7932929821FF12D700589385 /* AppDelegate.swift in Sources */,
 				793292B021FF22C600589385 /* WordCountVC.swift in Sources */,
+				7912069026208C77008FF6CF /* String+isValidEmail.swift in Sources */,
 				7932929C21FF12D700589385 /* Document.swift in Sources */,
 				7970653F22009F130097B5DE /* Email.swift in Sources */,
 			);
@@ -226,6 +264,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -287,6 +326,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -320,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dreadline/Dreadline.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L2BC5TCSR5;
@@ -330,7 +371,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Garagem-Infinita.Dreadline";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -339,6 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dreadline/Dreadline.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L2BC5TCSR5;
@@ -349,7 +391,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Garagem-Infinita.Dreadline";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
