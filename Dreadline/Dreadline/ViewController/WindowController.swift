@@ -30,7 +30,7 @@ class WindowController: NSWindowController {
         let visualEffect = NSVisualEffectView()
         visualEffect.blendingMode = .behindWindow
         visualEffect.state = .active
-        visualEffect.material = .dark
+//        visualEffect.material = .dark
         visualEffect.layer?.cornerRadius = 16.0
         window.contentView = visualEffect
     }
