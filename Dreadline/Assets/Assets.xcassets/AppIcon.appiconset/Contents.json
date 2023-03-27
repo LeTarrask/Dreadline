@@ -2,57 +2,58 @@
   "images" : [
     {
       "idiom" : "mac",
-      "size" : "16x16",
-      "scale" : "1x"
+      "scale" : "1x",
+      "size" : "16x16"
     },
     {
       "idiom" : "mac",
-      "size" : "16x16",
-      "scale" : "2x"
+      "scale" : "2x",
+      "size" : "16x16"
     },
     {
       "idiom" : "mac",
-      "size" : "32x32",
-      "scale" : "1x"
+      "scale" : "1x",
+      "size" : "32x32"
     },
     {
       "idiom" : "mac",
-      "size" : "32x32",
-      "scale" : "2x"
+      "scale" : "2x",
+      "size" : "32x32"
     },
     {
       "idiom" : "mac",
-      "size" : "128x128",
-      "scale" : "1x"
+      "scale" : "1x",
+      "size" : "128x128"
     },
     {
       "idiom" : "mac",
-      "size" : "128x128",
-      "scale" : "2x"
+      "scale" : "2x",
+      "size" : "128x128"
     },
     {
       "idiom" : "mac",
-      "size" : "256x256",
-      "scale" : "1x"
+      "scale" : "1x",
+      "size" : "256x256"
     },
     {
       "idiom" : "mac",
-      "size" : "256x256",
-      "scale" : "2x"
+      "scale" : "2x",
+      "size" : "256x256"
     },
     {
       "idiom" : "mac",
-      "size" : "512x512",
-      "scale" : "1x"
+      "scale" : "1x",
+      "size" : "512x512"
     },
     {
+      "filename" : "tarrask_a_1024x1024_logo_of_the_letter_D_made_out_of_a_cardio_E_9abccf76-d3ea-43cb-84bb-f55bb26012df.png",
       "idiom" : "mac",
-      "size" : "512x512",
-      "scale" : "2x"
+      "scale" : "2x",
+      "size" : "512x512"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
