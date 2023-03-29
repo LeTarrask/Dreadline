@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SwiftUI
 
 class TextViewController: NSViewController {
 
@@ -42,6 +43,7 @@ class TextViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dreadlineLabel.stringValue = ""
         let now = Date()
         timeField.minDate = now.addingTimeInterval(60)
     }

@@ -896,7 +896,18 @@ DQ
                                             <action selector="startDreadline:" target="5gI-5U-AMq" id="J3j-Mf-r4P"/>
                                         </connections>
                                     </button>
+                                    <box fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAN-w5-Rgj">
+                                        <rect key="frame" x="-3" y="-4" width="407" height="295"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" id="RCx-uh-mfY">
+                                            <rect key="frame" x="4" y="5" width="399" height="275"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                    </box>
                                 </subviews>
+                                <shadow key="shadow">
+                                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </shadow>
                             </customView>
                         </subviews>
                         <constraints>
